@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "e-wardrobe",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": { "enabled": true },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "wardrobe",
+      "database_id": "db3e60f4-101f-4384-af63-9961cb686bf9"
+    }
+  ]
+  // Secrets (wrangler secret put …; .dev.vars locally): MCP_AUTH_TOKEN, GOOGLE_CLIENT_ID,
+  // GOOGLE_CLIENT_SECRET, GOOGLE_REFRESH_TOKEN, DRIVE_FOLDER_ID
+}

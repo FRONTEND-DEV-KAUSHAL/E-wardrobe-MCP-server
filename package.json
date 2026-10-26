@@ -1,0 +1,29 @@
+{
+  "name": "e-wardrobe",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:migrate:local": "wrangler d1 migrations apply wardrobe --local",
+    "db:migrate:remote": "wrangler d1 migrations apply wardrobe --remote",
+    "test": "node --test src/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "local": "node --env-file=.dev.vars scripts/local.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261023.1",
+    "@types/node": "^24.19.2",
+    "typescript": "^7.0.2",
+    "wrangler": "^4.152.0"
+  },
+  "allowScripts": {
+    "workerd@1.20261019.1": true,
+    "esbuild@0.28.2": true,
+    "sharp@0.35.5": true
+  }
+}
